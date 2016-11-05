@@ -464,6 +464,21 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224000011405164324, guid: 46fb3d9e255f661499758f33561ad55b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011405164324, guid: 46fb3d9e255f661499758f33561ad55b,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011405164324, guid: 46fb3d9e255f661499758f33561ad55b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46fb3d9e255f661499758f33561ad55b, type: 2}
   m_IsPrefabParent: 0
@@ -573,7 +588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291d116dc3b946e4393f52f86b351186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartServerButton: {fileID: 0}
 --- !u!4 &1745600236
 Transform:
   m_ObjectHideFlags: 0

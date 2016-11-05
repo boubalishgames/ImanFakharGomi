@@ -4,6 +4,7 @@ using System.Collections;
 
 public class Crafting : MonoBehaviour
 {
+	//Hello
 	public static Crafting crafting;
 	
     public bool CraftingToggle;

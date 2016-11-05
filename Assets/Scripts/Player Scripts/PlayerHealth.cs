@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
+	
+	public static PlayerHealth playerhealth;
+	
     //Players Health
     public float Health;
     float MaxHealth = 100;
@@ -23,8 +27,9 @@ public class PlayerHealth : MonoBehaviour
     float MaxStamina = 100;
     float MinStamina = 0;
 
-    void Update()
-    {
+	void Awake()
+	{
+		//Player Health
 	    Health = Mathf.Clamp(Health, MinHealth, MaxHealth);
 	    //Player Hunger
 	    Hunger = Mathf.Clamp(Hunger, MinHunger, MaxHunger);

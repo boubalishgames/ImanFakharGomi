@@ -25,9 +25,13 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        Health = Mathf.Clamp(Health, MinHealth, MaxHealth);
-        Hunger = Mathf.Clamp(Hunger, MinHunger, MaxHunger);
-        Thirst = Mathf.Clamp(Thirst, MinThirst, MaxThirst);
+	    Health = Mathf.Clamp(Health, MinHealth, MaxHealth);
+	    //Player Hunger
+	    Hunger = Mathf.Clamp(Hunger, MinHunger, MaxHunger);
+	    //Player Thirst
+	    Thirst = Mathf.Clamp(Thirst, MinThirst, MaxThirst);
+	    //Player Stamina 
+	    Stamina = Mathf.Clamp(Stamina, MinStamina, MaxStamina);
     }
 
 

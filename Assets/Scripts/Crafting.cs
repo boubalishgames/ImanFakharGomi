@@ -4,7 +4,6 @@ using System.Collections;
 
 public class Crafting : MonoBehaviour
 {
-	//Hello
 	public static Crafting crafting;
 	
     public bool CraftingToggle;
@@ -13,6 +12,8 @@ public class Crafting : MonoBehaviour
 
     public Button CraftingButton;
 	private string CraftingButtonPath = "_Inventory/_Background/_Main Bar/_Player Crafting";
+	
+	public GameObject CraftingSubBar;
 
 
 	void Awake ()

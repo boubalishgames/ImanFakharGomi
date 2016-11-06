@@ -98,6 +98,8 @@ public class Inventory : MonoBehaviour
             AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);
             //Pistols 
             Pistols.pistols.OnPistolsToggle(false);
+            //Submachine GUns 
+            SubmachineGuns.submachineguns.OnSMGToggle(false);
         }
 
         //Don't allow the Inventory Panel to get disabled.

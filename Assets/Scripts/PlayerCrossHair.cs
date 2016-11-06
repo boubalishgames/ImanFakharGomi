@@ -9,7 +9,7 @@ public class PlayerCrossHair : MonoBehaviour
     public GameObject[] Crosshair = new GameObject[20];
     public string[] CrosshairPath = new string[20];
 
-	void Start ()
+	void OnEnable ()
     {
         playercrosshair = this.GetComponent<PlayerCrossHair>();
 
@@ -27,11 +27,23 @@ public class PlayerCrossHair : MonoBehaviour
 
 	void DefaultCrosshair  ()
     {
+
+        //Crosshair gets Disabled when Inventory is on;
         if (Inventory.inventory.InventoryBackgroundToggle == true)
         {
             Crosshair[0].SetActive(false);
         }
         else if (Inventory.inventory.InventoryBackgroundToggle == false)
+        {
+            Crosshair[0].SetActive(true);
+        }
+
+        //Crosshair get Disabled when Pause Menu is on;
+        if (PauseMenu.pauseMenu.PauseMenuToggle == true)
+        {
+            Crosshair[0].SetActive(false);
+        }
+        else if (PauseMenu.pauseMenu.PauseMenuToggle == false)
         {
             Crosshair[0].SetActive(true);
         }

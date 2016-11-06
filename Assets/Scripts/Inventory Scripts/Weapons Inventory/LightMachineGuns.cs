@@ -4,17 +4,27 @@ using System.Collections;
 
 public class LightMachineGuns : MonoBehaviour
 {
+    public static LightMachineGuns lightmachineguns;
+
     public bool LMGToggle;
     public GameObject LMGPanel;
 
-	// Use this for initialization
-	void Start ()
-    {
+    private string LMGPanelPath;
 
-    }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public Button LMGButtons;
+    private string LMGButtonPath;
+
+    public void LMGControls()
+    {
+        LMGToggle = !LMGToggle;
+
+        if (LMGToggle == true)
+        {
+
+        }
+        else if (LMGToggle == false)
+        {
+
+        }
+    }     
 }

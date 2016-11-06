@@ -16,6 +16,15 @@ public class PauseMenu : MonoBehaviour
     private Button ResumeGameButton;
     private string ResumeGamePath = "_Pause Menu/_Pause Menu Panel/_Resume Game";
 
+    //Exit Game 
+    private GameObject ExitGameButton;
+    private Button YesButton;
+    private Button NoButton;
+
+    private bool ExitGameToggle;
+    private string ExitPanelPath = "_Pause Menu Panel/_Exit Panel";
+    private string YesButtonPath;
+
     //Mouse Look 
     private MouseLook MouseX;
     private MouseLook MouseY;
@@ -121,5 +130,10 @@ public class PauseMenu : MonoBehaviour
 
             Cursor.visible = false;
         }
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

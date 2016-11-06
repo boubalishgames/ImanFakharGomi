@@ -391,10 +391,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1000012708211718, guid: 1cf85a388669e3b4d959966f855121ed, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1cf85a388669e3b4d959966f855121ed, type: 2}
   m_IsPrefabParent: 0
@@ -979,10 +975,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1000012440672840, guid: f12d3c9f995d54e4a82820e3853d0ce5, type: 2}
-      propertyPath: m_Name
-      value: Default
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f12d3c9f995d54e4a82820e3853d0ce5, type: 2}
   m_IsPrefabParent: 0
@@ -1083,8 +1075,18 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1000012102772104, guid: 46fb3d9e255f661499758f33561ad55b, type: 2}
+    - target: {fileID: 1000012668429000, guid: 46fb3d9e255f661499758f33561ad55b, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013904252324, guid: 46fb3d9e255f661499758f33561ad55b,
+        type: 2}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013904252324, guid: 46fb3d9e255f661499758f33561ad55b,
+        type: 2}
+      propertyPath: m_FontData.m_FontStyle
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

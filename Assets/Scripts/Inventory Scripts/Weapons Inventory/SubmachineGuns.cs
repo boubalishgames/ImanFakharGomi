@@ -37,7 +37,7 @@ public class SubmachineGuns : MonoBehaviour
         }
         else if (SMGToggle == false)
         {
-            SMGPanel.SetActive(false);
+
         }
     }
 

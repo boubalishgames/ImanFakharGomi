@@ -4,6 +4,8 @@ using System.Collections;
 
 public class Pistols : MonoBehaviour
 {
+    public static Pistols pistols;
+
     //Pistols Panel
     public bool PistolsToggle;
     public GameObject PistolsPanel;
@@ -17,6 +19,8 @@ public class Pistols : MonoBehaviour
 
 	void Awake ()
 	{
+        pistols = this.GetComponent<Pistols>();
+
         //Pistols Panel
 	    PistolsPanel = GameObject.Find(PistolsPanelPath);
 
@@ -25,7 +29,10 @@ public class Pistols : MonoBehaviour
 		PistolsButton.onClick.AddListener(() => PistolsControls());
 	}
 
-    void Update() { }
+    void Update()
+    {
+
+    }
 
 	public void PistolsControls ()
 	{
@@ -46,4 +53,10 @@ public class Pistols : MonoBehaviour
 
         }
 	}
+
+    public void OnPistolsToggle(bool Toggle)
+    {
+        pistols.PistolsToggle = Toggle;
+        pistols.PistolsPanel.SetActive(Toggle);
+    }
 }

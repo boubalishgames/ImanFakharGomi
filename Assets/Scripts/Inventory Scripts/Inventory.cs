@@ -80,14 +80,10 @@ public class Inventory : MonoBehaviour
             InventorySubBar.SetActive(true);
 
             //Weapons 
-            WeaponsInventory.weaponsInventory.WeaponsInventoryToggle = false;
-            WeaponsInventory.weaponsInventory.WeaponsInventoryPanel.SetActive(false);
-            WeaponsInventory.weaponsInventory.WeaponsSubBar.SetActive(false);
+            WeaponsInventory.weaponsInventory.OnWeaponsToggle(false);
 
             //Foods 
-            FoodsInventory.foodsInventory.FoodsInventoryToggle = false;
-            FoodsInventory.foodsInventory.FoodsInventoryPanel.SetActive(false);
-            FoodsInventory.foodsInventory.FoodsSubBar.SetActive(false);
+            FoodsInventory.foodsInventory.OnFoodToggle(false);
 
             //Apparel
             ApparelInventory.apparelInventory.ApparelInventoryToggle = false;

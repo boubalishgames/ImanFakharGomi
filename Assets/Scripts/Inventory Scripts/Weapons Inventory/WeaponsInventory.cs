@@ -17,13 +17,14 @@ public class WeaponsInventory : MonoBehaviour
     public GameObject WeaponsSubBar;
     private string WeaponsSBPath = "_Inventory/_Background/_Weapons SubBar";
 
+
     void Awake()
     {
         weaponsInventory = this.GetComponent<WeaponsInventory>();
 
         //Inventory Panel
         weaponsInventoryButton = GameObject.Find(weaponsInventoryButtonPath).GetComponent<Button>();
-        weaponsInventoryButton.onClick.AddListener(WeaponsControlButton);
+        weaponsInventoryButton.onClick.AddListener(WeaponsControls);
         WeaponsSubBar = GameObject.Find(WeaponsSBPath);
 
         //Weapons Inventory Panel
@@ -42,36 +43,16 @@ public class WeaponsInventory : MonoBehaviour
 
         if (WeaponsInventoryToggle == true)
         {
-            //Weapons Inventory
-            WeaponsInventoryPanel.SetActive(true);
-        }
-
-        else if (WeaponsInventoryToggle == false)
-        {
-            WeaponsInventoryPanel.SetActive(false);
-        }
-    }
-
-    public void WeaponsControlButton()
-    {
-        WeaponsInventoryToggle = !WeaponsInventoryToggle;
-
-        if (WeaponsInventoryToggle == true)
-        {
             //Inventory
             Inventory.inventory.InventoryPanel.SetActive(false);
             Inventory.inventory.InventoryToggle = false;
             Inventory.inventory.InventorySubBar.SetActive(false);
 
             //Weapons Inventory 
-            WeaponsInventoryPanel.SetActive(true);
-            WeaponsInventoryToggle = true;
-            WeaponsSubBar.SetActive(true);
+            OnWeaponsToggle(true);
 
             //Food Inventory
-            FoodsInventory.foodsInventory.FoodsInventoryPanel.SetActive(false);
-            FoodsInventory.foodsInventory.FoodsInventoryToggle = false;
-            FoodsInventory.foodsInventory.FoodsSubBar.SetActive(false);
+            FoodsInventory.foodsInventory.OnFoodToggle(false);
 
             //Apparel Inventory
             ApparelInventory.apparelInventory.ApparelInventoryPanel.SetActive(false);
@@ -81,6 +62,10 @@ public class WeaponsInventory : MonoBehaviour
 	    	//Player Customizations 
 	        PlayerCustomization.playercustomization.PCToggle = false;
 	        PlayerCustomization.playercustomization.PCPanel.SetActive(false);
+
+
+            //Weapons
+            Pistols.pistols.OnPistolsToggle(false);
         }
 
         else if (WeaponsInventoryToggle == false)
@@ -88,4 +73,12 @@ public class WeaponsInventory : MonoBehaviour
             WeaponsSubBar.SetActive(false);
         }
     }
+
+    public void OnWeaponsToggle(bool Toggle)
+    {
+        //Weapons Inventory 
+        WeaponsInventoryPanel.SetActive(Toggle);
+        WeaponsInventoryToggle = Toggle;
+        WeaponsSubBar.SetActive(Toggle);
+    } 
 }

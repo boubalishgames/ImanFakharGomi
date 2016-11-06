@@ -61,9 +61,7 @@ public class FoodsInventory : MonoBehaviour
             Inventory.inventory.InventorySubBar.SetActive(false);
 
             //Weapons Inventory 
-            WeaponsInventory.weaponsInventory.WeaponsInventoryPanel.SetActive(false);
-            WeaponsInventory.weaponsInventory.WeaponsInventoryToggle = false;
-            WeaponsInventory.weaponsInventory.WeaponsSubBar.SetActive(false);
+            WeaponsInventory.weaponsInventory.OnWeaponsToggle(false);
 
             //Food Inventory
             FoodsInventoryPanel.SetActive(true);
@@ -84,5 +82,12 @@ public class FoodsInventory : MonoBehaviour
         {
             FoodsSubBar.SetActive(false);
         }
+    }
+
+    public void OnFoodToggle(bool Toggle)
+    {
+        FoodsInventoryPanel.SetActive(Toggle);
+        FoodsInventoryToggle = Toggle;
+        FoodsSubBar.SetActive(Toggle);
     }
 }

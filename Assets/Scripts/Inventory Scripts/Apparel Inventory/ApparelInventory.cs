@@ -54,8 +54,7 @@ public class ApparelInventory : MonoBehaviour
             OnApparelToggle(true);
 
             //Player Customizations 
-            PlayerCustomization.playercustomization.PCToggle = false;
-	        PlayerCustomization.playercustomization.PCPanel.SetActive(false);
+            PlayerCustomization.playercustomization.OnPlayerCustomizationToggle(false);
 
             //Weapons Pistol Category 
             Pistols.pistols.OnPistolsToggle(false);  

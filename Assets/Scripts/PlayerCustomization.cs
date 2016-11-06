@@ -32,6 +32,7 @@ public class PlayerCustomization : MonoBehaviour
         if (PCToggle == true)
         {
             OnPlayerCustomizationToggle(true);
+            PCToggle = true;
 
             //Inventory
             Inventory.inventory.OnInventoryToggle(false);
@@ -44,7 +45,10 @@ public class PlayerCustomization : MonoBehaviour
 
             //Apparel 
             ApparelInventory.apparelInventory.OnApparelToggle(false);
-	           
+
+            //Crafting 
+            Crafting.crafting.OnCraftingToggle(false);
+
         }
 	    
         else if (PCToggle == false)

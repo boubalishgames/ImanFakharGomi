@@ -32,33 +32,33 @@ public class Crafting : MonoBehaviour
         if(CraftingToggle == true)
         {
             CraftingPanel.SetActive(true);
-	        
-	    	//Inventory 
-	        Inventory.inventory.InventoryToggle = false;
-	        Inventory.inventory.InventoryPanel.SetActive(false);
-	        
-	        //Weapons
-	        WeaponsInventory.weaponsInventory.WeaponsInventoryToggle = false;
-	        WeaponsInventory.weaponsInventory.WeaponsInventoryPanel.SetActive(false);
-	        
-	        //Foods 
-	        FoodsInventory.foodsInventory.FoodsInventoryToggle = false;
-	        FoodsInventory.foodsInventory.FoodsInventoryPanel.SetActive(false);
-	        FoodsInventory.foodsInventory.FoodsSubBar.SetActive(false);
-	        
-	        //Apparel 
-	        ApparelInventory.apparelInventory.ApparelInventoryToggle = false;
-	        ApparelInventory.apparelInventory.ApparelInventoryPanel.SetActive(false);
-	        ApparelInventory.apparelInventory.ApparelSubBar.SetActive(false);
-	        
-	        //Player Customization 
-	        PlayerCustomization.playercustomization.PCToggle = false;
-	        PlayerCustomization.playercustomization.PCPanel.SetActive(false);
+            CraftingToggle = true;
+
+            //Inventory 
+            Inventory.inventory.OnInventoryToggle(false);
+
+            //Weapons
+            WeaponsInventory.weaponsInventory.OnWeaponsToggle(false);
+
+            //Foods 
+            FoodsInventory.foodsInventory.OnFoodToggle(false);
+
+            //Apparel 
+            ApparelInventory.apparelInventory.OnApparelToggle(false);
+
+            //Player Customization 
+            PlayerCustomization.playercustomization.OnPlayerCustomizationToggle(false);
         }
 
         else if (CraftingToggle == false)
         {
 	
         }
+    }
+
+    public void OnCraftingToggle(bool Toggle)
+    {
+        CraftingPanel.SetActive(Toggle);
+        CraftingToggle = Toggle;
     }
 }

@@ -89,8 +89,10 @@ public class Inventory : MonoBehaviour
             ApparelInventory.apparelInventory.OnApparelToggle(false);
 
             //Player Customizations 
-            PlayerCustomization.playercustomization.PCToggle = false;
-            PlayerCustomization.playercustomization.PCPanel.SetActive(false);
+            PlayerCustomization.playercustomization.OnPlayerCustomizationToggle(false);
+
+            //Crafting 
+            Crafting.crafting.OnCraftingToggle(false);
         }
 
         //Don't allow the Inventory Panel to get disabled.

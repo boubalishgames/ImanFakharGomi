@@ -42,19 +42,13 @@ public class ApparelInventory : MonoBehaviour
         if(ApparelInventoryToggle == true)
         {
             //Inventory
-            Inventory.inventory.InventoryPanel.SetActive(false);
-            Inventory.inventory.InventoryToggle = false;
-            Inventory.inventory.InventorySubBar.SetActive(false);
+            OnInventoryToggle(true);
 
             //Weapons Inventory 
-            WeaponsInventory.weaponsInventory.WeaponsInventoryPanel.SetActive(false);
-            WeaponsInventory.weaponsInventory.WeaponsInventoryToggle = false;
-            WeaponsInventory.weaponsInventory.WeaponsSubBar.SetActive(false);
+            WeaponsInventory.weaponsInventory.OnWeaponsToggle(false);
 
             //Food Inventory
-            FoodsInventory.foodsInventory.FoodsInventoryPanel.SetActive(false);
-            FoodsInventory.foodsInventory.FoodsInventoryToggle = false;
-            FoodsInventory.foodsInventory.FoodsSubBar.SetActive(false);
+            FoodsInventory.foodsInventory.OnFoodToggle(false);
 
             //Apparel Inventory
             ApparelInventoryPanel.SetActive(true);
@@ -86,5 +80,12 @@ public class ApparelInventory : MonoBehaviour
         {
             ApparelInventoryPanel.SetActive(false);
         }
+    }
+
+    public void OnInventoryToggle(bool Toggle)
+    {
+        Inventory.inventory.InventoryPanel.SetActive(Toggle);
+        Inventory.inventory.InventoryToggle = Toggle;
+        Inventory.inventory.InventorySubBar.SetActive(Toggle);
     }
 }

@@ -86,9 +86,7 @@ public class Inventory : MonoBehaviour
             FoodsInventory.foodsInventory.OnFoodToggle(false);
 
             //Apparel
-            ApparelInventory.apparelInventory.ApparelInventoryToggle = false;
-            ApparelInventory.apparelInventory.ApparelInventoryPanel.SetActive(false);
-            ApparelInventory.apparelInventory.ApparelSubBar.SetActive(false);
+            ApparelInventory.apparelInventory.OnApparelToggle(false);
 
             //Player Customizations 
             PlayerCustomization.playercustomization.PCToggle = false;
@@ -143,5 +141,12 @@ public class Inventory : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
         }
+    }
+
+    public void OnInventoryToggle(bool Toggle)
+    {
+        InventoryToggle = Toggle;
+        InventoryPanel.SetActive(Toggle);
+        InventorySubBar.SetActive(Toggle);
     }
 }

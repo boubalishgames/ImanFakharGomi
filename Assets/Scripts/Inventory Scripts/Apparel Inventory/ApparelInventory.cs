@@ -42,7 +42,7 @@ public class ApparelInventory : MonoBehaviour
         if(ApparelInventoryToggle == true)
         {
             //Inventory
-            OnInventoryToggle(true);
+            Inventory.inventory.OnInventoryToggle(false);
 
             //Weapons Inventory 
             WeaponsInventory.weaponsInventory.OnWeaponsToggle(false);
@@ -51,14 +51,14 @@ public class ApparelInventory : MonoBehaviour
             FoodsInventory.foodsInventory.OnFoodToggle(false);
 
             //Apparel Inventory
-            ApparelInventoryPanel.SetActive(true);
-            ApparelInventoryToggle = true;
-	        ApparelSubBar.SetActive(true);
-	        
-	        //Player Customizations 
-	        PlayerCustomization.playercustomization.PCToggle = false;
+            OnApparelToggle(true);
+
+            //Player Customizations 
+            PlayerCustomization.playercustomization.PCToggle = false;
 	        PlayerCustomization.playercustomization.PCPanel.SetActive(false);
-	        
+
+            //Weapons Pistol Category 
+            Pistols.pistols.OnPistolsToggle(false);  
         }
 
         else if (ApparelInventoryToggle == false)
@@ -67,25 +67,10 @@ public class ApparelInventory : MonoBehaviour
         }
     }
 
-    public void ApparelControlsButton()
+    public void OnApparelToggle(bool Toggle)
     {
-        ApparelInventoryToggle = !ApparelInventoryToggle;
-
-        if (ApparelInventoryToggle == true)
-        {
-            ApparelInventoryPanel.SetActive(true);
-        }
-
-        else if (ApparelInventoryToggle == false)
-        {
-            ApparelInventoryPanel.SetActive(false);
-        }
-    }
-
-    public void OnInventoryToggle(bool Toggle)
-    {
-        Inventory.inventory.InventoryPanel.SetActive(Toggle);
-        Inventory.inventory.InventoryToggle = Toggle;
-        Inventory.inventory.InventorySubBar.SetActive(Toggle);
+        ApparelInventoryPanel.SetActive(Toggle);
+        ApparelInventoryToggle = (Toggle);
+        ApparelSubBar.SetActive(Toggle);
     }
 }

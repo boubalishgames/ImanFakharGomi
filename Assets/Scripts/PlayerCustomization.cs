@@ -13,11 +13,6 @@ public class PlayerCustomization : MonoBehaviour
     private Button PCButton;
     private string PCButtonPath = "_Inventory/_Background/_Main Bar/_Player Customization";
 
-	//PC Back Button
-	private bool PCBackToggle;
-	private Button PCBackButton;
-	private string PCBackPath = "_Inventory/_Background/_Player Customization Panel/_Back";
-
     void Awake ()
     {
         playercustomization = this.GetComponent<PlayerCustomization>();
@@ -26,9 +21,6 @@ public class PlayerCustomization : MonoBehaviour
         PCButton = GameObject.Find(PCButtonPath).GetComponent<Button>();
 		PCButton.onClick.AddListener(() => PCControls());
 
-		//PC Back Button;
-		//PCBackButton = GameObject.Find(PCBackPath).GetComponent<Button>(); 
-		//PCBackButton.onClick.AddListener(() => PCBack());
     }
 
     void Update() { }
@@ -42,22 +34,16 @@ public class PlayerCustomization : MonoBehaviour
             PCPanel.SetActive(true);
 
             //Inventory
-            Inventory.inventory.InventoryToggle = false;
-	        Inventory.inventory.InventoryPanel.SetActive(false);
-	        
-	        //Weapons 
-	        WeaponsInventory.weaponsInventory.WeaponsInventoryToggle = false;
-	        WeaponsInventory.weaponsInventory.WeaponsInventoryPanel.SetActive(false);
-	        
-	        //Foods 
-	        FoodsInventory.foodsInventory.FoodsInventoryToggle = false;
-	        FoodsInventory.foodsInventory.FoodsInventoryPanel.SetActive(false);
-	        FoodsInventory.foodsInventory.FoodsSubBar.SetActive(false);
-	        
-	        //Apparel 
-	        ApparelInventory.apparelInventory.ApparelInventoryToggle = false;
-	        ApparelInventory.apparelInventory.ApparelInventoryPanel.SetActive(false);
-	        ApparelInventory.apparelInventory.ApparelSubBar.SetActive(false);
+            Inventory.inventory.OnInventoryToggle(false);
+
+            //Weapons 
+            WeaponsInventory.weaponsInventory.OnWeaponsToggle(false);
+
+            //Foods 
+            FoodsInventory.foodsInventory.OnFoodToggle(false);
+
+            //Apparel 
+            ApparelInventory.apparelInventory.OnApparelToggle(false);
 	           
         }
 	    
@@ -66,21 +52,4 @@ public class PlayerCustomization : MonoBehaviour
           
         }
     }
-
-	public void PCBack ()
-	{
-		PCBackToggle = !PCBackToggle;
-
-		if (PCBackToggle == true)
-		{
-			PCPanel.SetActive(false);
-			PCToggle = false;
-			
-			//Inventory
-            Inventory.inventory.InventoryToggle = true;
-            Inventory.inventory.InventoryPanel.SetActive(true);
-
-			PCBackToggle = false; 
-		}
-	}
 }

@@ -27,6 +27,9 @@ public class Pistols : MonoBehaviour
 	    //Pistols Button
 		PistolsButton = GameObject.Find(PistolsButtonPath).GetComponent<Button>();
 		PistolsButton.onClick.AddListener(() => PistolsControls());
+
+        //Assault Rifles
+        AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);
 	}
 
     void Update()

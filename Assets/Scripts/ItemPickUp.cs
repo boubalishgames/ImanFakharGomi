@@ -5,7 +5,9 @@ using System.Collections;
 public class ItemPickUp : MonoBehaviour
 {
     [SerializeField]
-    ItemsDatabase[] PlayerItems = new ItemsDatabase[20];
+    public ItemsDatabase[] PlayerItems = new ItemsDatabase[20];
+
+    public static ItemPickUp itempickup;
 
     public Text ItemText;
     public GameObject ItemPanel;
@@ -13,7 +15,8 @@ public class ItemPickUp : MonoBehaviour
     void Awake()
     {
         ItemText = GameObject.Find("Item UI/Text").GetComponent<Text>();
-
+        ItemPanel = GameObject.Find("Item UI");
+        itempickup = this.GetComponent<ItemPickUp>();
     }
 
     void OnEnable()
@@ -30,26 +33,41 @@ public class ItemPickUp : MonoBehaviour
         ItemText.enabled = false;
     }
 
+
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 4))
         {
+            for (int i = 0; i < 20; i++)
+            {
+                if (hit.collider.tag == PlayerItems[i].TagName)
+                {
+                    ItemText.text = "Press [F] to Pick Up Item";
+                    ItemText.enabled = true;
+                }
+            }
+
             if (Input.GetButtonDown("Interactions"))
             {
                 for (int i = 0; i < 20; i++)
                 {
-                    if (hit.collider.tag == PlayerItems[i].TagName && hit.distance < 4)
+                    if (hit.collider.tag == PlayerItems[i].TagName)
                     {
                         Destroy(hit.collider.gameObject);
                         PlayerItems[i].ItemsCounter++;
 
-                        StartCoroutine(ShowMessage("You have found " + PlayerItems[i].Name + " " + "[" + PlayerItems[i].ItemsCounter + "]", 0.5f));
+                        StartCoroutine(ShowMessage("You have found " + PlayerItems[i].Name + " " + "[" + PlayerItems[i].ItemsCounter + "]", 1.5f));
                     }
                 }
             }
+        }
+
+        else
+        {
+            ItemText.enabled = false;
         }
     }
 }

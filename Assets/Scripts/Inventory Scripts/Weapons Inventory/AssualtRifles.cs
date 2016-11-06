@@ -15,6 +15,8 @@ public class AssualtRifles : MonoBehaviour
 
     void Awake()
     {
+        assualtrifles = this.GetComponent<AssualtRifles>();
+
 	    ARPanel = GameObject.Find(ARPanelPath);
 	    ARButton = GameObject.Find(ARButtonPath).GetComponent<Button>();
 	    ARButton.onClick.AddListener(() => ARControls());
@@ -28,12 +30,10 @@ public class AssualtRifles : MonoBehaviour
 
         if (ARToggle == true)
         {
-            ARPanel.SetActive(true);
-            ARToggle = true;
+            OnAssaultRifleToggle(true);
 
             //Weapons Inventory
-            WeaponsInventory.weaponsInventory.WeaponsInventoryToggle = false;
-            WeaponsInventory.weaponsInventory.WeaponsInventoryPanel.SetActive(false);
+            WeaponsInventory.weaponsInventory.OnWeaponsToggle(false);
 
             //Pistols
             Pistols.pistols.OnPistolsToggle(false);
@@ -41,7 +41,7 @@ public class AssualtRifles : MonoBehaviour
 
         else if (ARToggle == false)
         {
-            ARPanel.SetActive(false);
+
         }
     }
 

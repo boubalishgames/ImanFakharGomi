@@ -12,6 +12,8 @@ public class ItemPickUp : MonoBehaviour
     public Text ItemText;
     public GameObject ItemPanel;
 
+    public LayerMask layerMasks;
+
     void Awake()
     {
         ItemText = GameObject.Find("Item UI/Text").GetComponent<Text>();
@@ -39,7 +41,7 @@ public class ItemPickUp : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 4))
+        if (Physics.Raycast(ray, out hit, 4, layerMasks))
         {
             for (int i = 0; i < 20; i++)
             {
@@ -47,6 +49,8 @@ public class ItemPickUp : MonoBehaviour
                 {
                     ItemText.text = "Press [F] to Pick Up Item";
                     ItemText.enabled = true;
+                    i = 0;
+                    break;
                 }
             }
 
@@ -58,8 +62,11 @@ public class ItemPickUp : MonoBehaviour
                     {
                         Destroy(hit.collider.gameObject);
                         PlayerItems[i].ItemsCounter++;
+                        i = 0;
 
                         StartCoroutine(ShowMessage("You have found " + PlayerItems[i].Name + " " + "[" + PlayerItems[i].ItemsCounter + "]", 1.5f));
+
+                        break;
                     }
                 }
             }

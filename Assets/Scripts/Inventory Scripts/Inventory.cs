@@ -93,6 +93,11 @@ public class Inventory : MonoBehaviour
 
             //Crafting 
             Crafting.crafting.OnCraftingToggle(false);
+
+            //Assault Rifles 
+            AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);
+            //Pistols 
+            Pistols.pistols.OnPistolsToggle(false);
         }
 
         //Don't allow the Inventory Panel to get disabled.

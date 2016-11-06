@@ -27,9 +27,6 @@ public class Pistols : MonoBehaviour
 	    //Pistols Button
 		PistolsButton = GameObject.Find(PistolsButtonPath).GetComponent<Button>();
 		PistolsButton.onClick.AddListener(() => PistolsControls());
-
-        //Assault Rifles
-        AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);
 	}
 
     void Update()
@@ -46,8 +43,10 @@ public class Pistols : MonoBehaviour
             PistolsPanel.SetActive(true);
 
             //Weapons Inventory
-            WeaponsInventory.weaponsInventory.WeaponsInventoryToggle = false;
-            WeaponsInventory.weaponsInventory.WeaponsInventoryPanel.SetActive(false);
+            WeaponsInventory.weaponsInventory.OnWeaponsToggle(false);
+
+            //Assault Rifles
+            AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);
 
         }
 

@@ -101,7 +101,7 @@ GameObject:
   - 33: {fileID: 112812360}
   - 65: {fileID: 112812359}
   - 23: {fileID: 112812358}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Health Pack
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   - 33: {fileID: 428361194}
   - 65: {fileID: 428361193}
   - 23: {fileID: 428361192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Health Pack
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   - 33: {fileID: 432357527}
   - 65: {fileID: 432357526}
   - 23: {fileID: 432357525}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (6)
   m_TagString: Health Pack
   m_Icon: {fileID: 0}
@@ -567,7 +567,7 @@ GameObject:
   - 33: {fileID: 712663519}
   - 65: {fileID: 712663518}
   - 23: {fileID: 712663517}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Health Pack
   m_Icon: {fileID: 0}
@@ -683,6 +683,16 @@ Prefab:
         type: 2}
       propertyPath: m_ViewID.m_Type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012857624250, guid: 85edb1c78f9964243bc3ff9baadbf89e,
+        type: 2}
+      propertyPath: Ignore.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012857624250, guid: 85edb1c78f9964243bc3ff9baadbf89e,
+        type: 2}
+      propertyPath: layerMasks.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 148000011955780642, guid: 85edb1c78f9964243bc3ff9baadbf89e, type: 2}
@@ -804,7 +814,7 @@ GameObject:
   - 33: {fileID: 904895818}
   - 65: {fileID: 904895817}
   - 23: {fileID: 904895816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (5)
   m_TagString: Health Pack
   m_Icon: {fileID: 0}
@@ -1091,7 +1101,7 @@ GameObject:
   - 33: {fileID: 1355081271}
   - 65: {fileID: 1355081270}
   - 23: {fileID: 1355081269}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Health Pack
   m_Icon: {fileID: 0}
@@ -1243,7 +1253,7 @@ GameObject:
   - 33: {fileID: 1714059595}
   - 65: {fileID: 1714059594}
   - 23: {fileID: 1714059593}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -27,6 +27,12 @@ public class PlayerHealth : MonoBehaviour
     float MaxStamina = 100;
     float MinStamina = 0;
 
+    void OnEnable()
+    {
+        playerhealth = this.GetComponent<PlayerHealth>();
+    }
+
+
 	void Awake()
 	{
 		//Player Health
@@ -38,6 +44,12 @@ public class PlayerHealth : MonoBehaviour
 	    //Player Stamina 
 	    Stamina = Mathf.Clamp(Stamina, MinStamina, MaxStamina);
     }
+
+    public void PlayerUI()
+    {
+
+    }
+
 
 
     public void KillPlayer()

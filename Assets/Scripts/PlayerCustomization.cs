@@ -31,7 +31,7 @@ public class PlayerCustomization : MonoBehaviour
 
         if (PCToggle == true)
         {
-            PCPanel.SetActive(true);
+            OnPlayerCustomizationToggle(true);
 
             //Inventory
             Inventory.inventory.OnInventoryToggle(false);
@@ -51,5 +51,11 @@ public class PlayerCustomization : MonoBehaviour
         {
           
         }
+    }
+
+    public void OnPlayerCustomizationToggle(bool Toggle)
+    {
+        PCPanel.SetActive(Toggle);
+        PCToggle = Toggle;
     }
 }

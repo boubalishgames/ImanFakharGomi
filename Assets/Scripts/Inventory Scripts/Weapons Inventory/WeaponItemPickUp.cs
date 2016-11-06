@@ -4,10 +4,19 @@ using System.Collections;
 
 public class WeaponItemPickUp : MonoBehaviour
 {
-    [SerializeField]
-    WeaponsDatabase[] Pistols = new WeaponsDatabase[20];
-    [SerializeField]
-    WeaponsDatabase[] AssaultRifles = new WeaponsDatabase[20];
+    //Pistols 
+    [SerializeField] ItemsDatabase[] Pistols = new ItemsDatabase[20];
+    //Assault Rifles
+    [SerializeField] ItemsDatabase[] AssaultRifles = new ItemsDatabase[20];
+    //Light Machine Gun
+    [SerializeField] ItemsDatabase[] Lightmachineguns = new ItemsDatabase[20];
+    //Submachine Guns
+    [SerializeField] ItemsDatabase[] Submachineguns = new ItemsDatabase[20];
+    //Shot guns
+    [SerializeField] ItemsDatabase[] Shotguns = new ItemsDatabase[20];
+    //Launchers 
+    [SerializeField] ItemsDatabase[] Launchers = new ItemsDatabase[20];
+
 
     void Reset()
     {
@@ -93,14 +102,14 @@ public class WeaponItemPickUp : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (Input.GetButtonDown("Interaction"))
+            if (Input.GetButtonDown("Interactions"))
             {
                 for (int i = 0; i < 20; i++)
                 {
                     if (hit.collider.tag == Pistols[i].TagName && hit.distance < 4)
                     {
                         Destroy(hit.collider.gameObject);
-                        Pistols[i].WeaponCounter++;
+                        Pistols[i].ItemsCounter++;
 
                         print("You have found " + Pistols[i].Name);
                     }
@@ -108,7 +117,7 @@ public class WeaponItemPickUp : MonoBehaviour
                     if (hit.collider.tag == AssaultRifles[i].TagName && hit.distance < 4)
                     {
                         Destroy(hit.collider.gameObject);
-                        AssaultRifles[i].WeaponCounter++;
+                        AssaultRifles[i].ItemsCounter++;
                     }
                 }
             }

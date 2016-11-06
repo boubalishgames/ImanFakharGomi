@@ -48,6 +48,11 @@ public class Crafting : MonoBehaviour
 
             //Player Customization 
             PlayerCustomization.playercustomization.OnPlayerCustomizationToggle(false);
+
+            //Weapons
+            Pistols.pistols.OnPistolsToggle(false);
+            AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);
+            SubmachineGuns.submachineguns.OnSMGToggle(false);
         }
 
         else if (CraftingToggle == false)

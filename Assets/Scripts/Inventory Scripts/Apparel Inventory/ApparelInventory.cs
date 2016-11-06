@@ -56,8 +56,10 @@ public class ApparelInventory : MonoBehaviour
             //Player Customizations 
             PlayerCustomization.playercustomization.OnPlayerCustomizationToggle(false);
 
-            //Weapons Pistol Category 
-            Pistols.pistols.OnPistolsToggle(false);  
+            //Weapons
+            Pistols.pistols.OnPistolsToggle(false);
+            AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);
+            SubmachineGuns.submachineguns.OnSMGToggle(false);
         }
 
         else if (ApparelInventoryToggle == false)

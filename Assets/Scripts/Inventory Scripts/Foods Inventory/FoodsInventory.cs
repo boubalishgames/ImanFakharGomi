@@ -56,26 +56,24 @@ public class FoodsInventory : MonoBehaviour
         if (FoodsInventoryToggle == true)
         {
             //Inventory
-            Inventory.inventory.InventoryPanel.SetActive(false);
-            Inventory.inventory.InventoryToggle = false;
-            Inventory.inventory.InventorySubBar.SetActive(false);
+            Inventory.inventory.OnInventoryToggle(false);
 
             //Weapons Inventory 
             WeaponsInventory.weaponsInventory.OnWeaponsToggle(false);
 
             //Food Inventory
-            FoodsInventoryPanel.SetActive(true);
-            FoodsInventoryToggle = true;
-            FoodsSubBar.SetActive(true);
+            FoodsInventory.foodsInventory.OnFoodToggle(true);
 
             //Apparel Inventory
-            ApparelInventory.apparelInventory.ApparelInventoryPanel.SetActive(false);
-            ApparelInventory.apparelInventory.ApparelInventoryToggle = false;
-	        ApparelInventory.apparelInventory.ApparelSubBar.SetActive(false);
-	        
-	        //Player Customizations 
-	        PlayerCustomization.playercustomization.PCToggle = false;
-	        PlayerCustomization.playercustomization.PCPanel.SetActive(false);
+            ApparelInventory.apparelInventory.OnApparelToggle(false);
+
+            //Player Customizations 
+            PlayerCustomization.playercustomization.OnPlayerCustomizationToggle(false);
+
+            //Weapons
+            Pistols.pistols.OnPistolsToggle(false);
+            AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);
+            SubmachineGuns.submachineguns.OnSMGToggle(false);
         }
 
         else if (FoodsInventoryToggle == false)

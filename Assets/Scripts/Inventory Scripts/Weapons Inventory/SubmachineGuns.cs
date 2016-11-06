@@ -4,44 +4,22 @@ using System.Collections;
 
 public class SubmachineGuns : MonoBehaviour
 {
+    public static SubmachineGuns submachineguns;
+
     public bool SMGToggle;
     public GameObject SMGPanel;
     private string SMGPath = "_Inventory/_Background/_Submachine Panel";
 
     private Button SMGButton;
-    private string SMGButtonPath = "_Inventory/_Background/_Weapons Panel/_Submachine Guns";
-
-    //SMG Back Button 
-    private bool SMGBackToggle;
-    private Button SMGBackButton;
-    private string SMGBackPath = "_Inventory/_Background/_Submachine Panel/_Back";
-
-	//SMG Back To Inventory
-	private bool SMGBackToInventoryToggle;
-	private Button SMGBackToInventoryButton;
-	private string SMGBackToInventoryPath = "_Inventory/_Background/_Submachine Panel/_Back To Inventory";
-
-
-    //Weapons Inventory
-    private WeaponsInventory weaponsInventory;
-	private Inventory inventory;
+    private string SMGButtonPath = "_Inventory/_Background/_Weapons SubBar/_Submachine Guns";
 
     void Awake()
     {
-		inventory = GetComponent<Inventory> ();
-        weaponsInventory = GetComponent<WeaponsInventory>();
+        submachineguns = this.GetComponent<SubmachineGuns>();
 
         SMGPanel = GameObject.Find(SMGPath);
-	    //SMGButton = GameObject.Find(SMGButtonPath).GetComponent<Button>();
-	    // SMGButton.onClick.AddListener(() => SMGControls());
-
-        //SMG Back Button
-        //SMGBackButton = GameObject.Find(SMGBackPath).GetComponent<Button>();
-        //SMGBackButton.onClick.AddListener(() => SMGBackControls());
-
-		//SMG Back To Inventory
-		//SMGBackToInventoryButton = GameObject.Find(SMGBackToInventoryPath).GetComponent<Button>();
-		//SMGBackToInventoryButton.onClick.AddListener(() => SMGBackToInventory());
+	    SMGButton = GameObject.Find(SMGButtonPath).GetComponent<Button>();
+	    SMGButton.onClick.AddListener(() => SMGControls());
     }
 
     void Update() { }
@@ -52,11 +30,10 @@ public class SubmachineGuns : MonoBehaviour
 
         if (SMGToggle == true)
         {
-            SMGPanel.SetActive(true);
+            OnSMGToggle(true);
 
             //Weapons Inventory
-            weaponsInventory.WeaponsInventoryToggle = false;
-            weaponsInventory.WeaponsInventoryPanel.SetActive(false);
+            WeaponsInventory.weaponsInventory.OnWeaponsToggle(false);
         }
         else if (SMGToggle == false)
         {
@@ -64,39 +41,9 @@ public class SubmachineGuns : MonoBehaviour
         }
     }
 
-    public void SMGBackControls()
+    public void OnSMGToggle(bool Toggle)
     {
-        SMGBackToggle = !SMGBackToggle;
-
-        if (SMGBackToggle == true)
-        {
-            //SMG
-            SMGPanel.SetActive(false);
-            SMGToggle = false;
-
-            //Weapons Inventory
-            weaponsInventory.WeaponsInventoryToggle = true;
-            weaponsInventory.WeaponsInventoryPanel.SetActive(true);
-
-            SMGBackToggle = false;
-        }
+        SMGPanel.SetActive(Toggle);
+        SMGToggle = Toggle;
     }
-
-	public void SMGBackToInventory ()
-	{
-		SMGBackToInventoryToggle = !SMGBackToInventoryToggle;
-
-		if (SMGBackToInventoryToggle == true)
-		{
-			//SMG
-			SMGPanel.SetActive(false);
-			SMGToggle = false;
-
-			//Inventory
-			inventory.InventoryToggle = true;
-			inventory.InventoryPanel.SetActive (true);
-
-			SMGBackToInventoryToggle = false;
-		}
-	}
 }

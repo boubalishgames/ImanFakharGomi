@@ -391,6 +391,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013012307848, guid: 1cf85a388669e3b4d959966f855121ed,
+        type: 2}
+      propertyPath: m_Text
+      value: LMG
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1cf85a388669e3b4d959966f855121ed, type: 2}
   m_IsPrefabParent: 0
@@ -1244,6 +1249,20 @@ MonoBehaviour:
   - 
   - 
   - 
+--- !u!114 &1414412997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1414412977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a839cfeda53bf4ea3fe29098b0ac41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LMGToggle: 0
+  LMGPanel: {fileID: 0}
+  LMGButtons: {fileID: 0}
 --- !u!1 &1714059592
 GameObject:
   m_ObjectHideFlags: 0

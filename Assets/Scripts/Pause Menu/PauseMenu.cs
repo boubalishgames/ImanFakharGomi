@@ -23,7 +23,8 @@ public class PauseMenu : MonoBehaviour
 
     private bool ExitGameToggle;
     private string ExitPanelPath = "_Pause Menu Panel/_Exit Panel";
-    private string YesButtonPath;
+    private string YesButtonPath = "_Pause Menu Panel/_Yes";
+    private string NoButtonPath = "_Pause Menu Panel/_No";
 
     //Mouse Look 
     private MouseLook MouseX;

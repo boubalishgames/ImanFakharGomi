@@ -28,25 +28,14 @@ public class PlayerCrossHair : MonoBehaviour
 	void DefaultCrosshair  ()
     {
 
-        //Crosshair gets Disabled when Inventory is on;
-        if (Inventory.inventory.InventoryBackgroundToggle == true)
+        //Crosshair gets Disabled when Inventory/Pause Menu is on;
+        if (Inventory.inventory.InventoryBackgroundToggle == true || PauseMenu.pauseMenu.PauseMenuToggle == true)
         {
             Crosshair[0].SetActive(false);
         }
-        else if (Inventory.inventory.InventoryBackgroundToggle == false)
+        else if (Inventory.inventory.InventoryBackgroundToggle == false || PauseMenu.pauseMenu.PauseMenuToggle == false)
         {
             Crosshair[0].SetActive(true);
         }
-
-        //Crosshair get Disabled when Pause Menu is on;
-        if (PauseMenu.pauseMenu.PauseMenuToggle == true)
-        {
-            Crosshair[0].SetActive(false);
-        }
-        else if (PauseMenu.pauseMenu.PauseMenuToggle == false)
-        {
-            Crosshair[0].SetActive(true);
-        }
-
     }
 }

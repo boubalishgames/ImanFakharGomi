@@ -3,14 +3,20 @@ using System.Collections;
 
 public class PlayerInformation : MonoBehaviour
 {
+    public static PlayerInformation playerinformation;
+
     public string PlayerName = "Player";
     public int PlayerID;
-    private string UserName;
-    private GameObject Player;
+    public string UserName;
+
+    public GameObject Inventory;
+
 
 	void OnEnable ()
 	{
-	    if(PlayerID != null)
+       playerinformation = GetComponent<PlayerInformation>();
+
+        if (PlayerID != null)
 	    {
 	        PlayerID = Random.Range(1, 999);
         }

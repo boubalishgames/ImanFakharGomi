@@ -2,6 +2,13 @@
 using UnityEngine.UI;
 using System.Collections;
 
+[RequireComponent(typeof(Pistols))]
+[RequireComponent(typeof(AssualtRifles))]
+[RequireComponent(typeof(SubmachineGuns))]
+[RequireComponent(typeof(LightMachineGuns))]
+
+[RequireComponent(typeof(WeaponItemPickUp))]
+
 public class WeaponsInventory : MonoBehaviour
 {
     public static WeaponsInventory weaponsInventory;
@@ -59,9 +66,10 @@ public class WeaponsInventory : MonoBehaviour
             PlayerCustomization.playercustomization.OnPlayerCustomizationToggle(false);
 
             //Weapons
-            Pistols.pistols.OnPistolsToggle(false);
-            AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);
-            SubmachineGuns.submachineguns.OnSMGToggle(false);
+            Pistols.pistols.OnPistolsToggle(false); //Pistols
+            AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);    //Assault Rifles
+            SubmachineGuns.submachineguns.OnSMGToggle(false);   //Submachine Guns
+            LightMachineGuns.lightmachineguns.OnLMGToggle(false);   //Lightmachine Guns
         }
 
         else if (WeaponsInventoryToggle == false)

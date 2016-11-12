@@ -34,9 +34,6 @@ public class AssualtRifles : MonoBehaviour
 
             //Weapons Inventory
             WeaponsInventory.weaponsInventory.OnWeaponsToggle(false);
-
-            //Pistols
-            Pistols.pistols.OnPistolsToggle(false);
         }
 
         else if (ARToggle == false)

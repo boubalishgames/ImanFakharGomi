@@ -7,8 +7,10 @@ TagManager:
   - USP.45
   - SNS Pistol
   - AK47
-  - Test
-  - Health Pack
+  - Med Pack Tier One
+  - 'Med Pack Tier Two '
+  - Med Pack Tier Three
+  - Med Pack Tier Four
   layers:
   - Default
   - TransparentFX

@@ -2,6 +2,16 @@
 using UnityEngine.UI;
 using System.Collections;
 
+[RequireComponent (typeof(WeaponsInventory))]
+[RequireComponent(typeof(FoodsInventory))]
+[RequireComponent(typeof(ApparelInventory))]
+[RequireComponent(typeof(Crafting))]
+[RequireComponent(typeof(PlayerInformation))]
+[RequireComponent(typeof(PlayerCustomization))]
+[RequireComponent(typeof(PauseMenu))]
+[RequireComponent(typeof(PlayerCrossHair))]
+[RequireComponent(typeof(ItemPickUp))]
+
 public class Inventory : MonoBehaviour
 {
     //Inventory
@@ -33,11 +43,14 @@ public class Inventory : MonoBehaviour
     private MouseLook MouseY;
     private string MouseYPath = "_Player/_Main Camera";
 
-    public void Awake()
+    void OnEnable()
     {
         //Inventory
         inventory = this.GetComponent<Inventory>();
+    }
 
+    public void Awake()
+    {
         InventoryButton = GameObject.Find(InventoryButtonPath).GetComponent<Button>();
         InventoryButton.onClick.AddListener(InventoryControl);
         InventorySubBar = GameObject.Find(InventorySBPath);
@@ -107,7 +120,7 @@ public class Inventory : MonoBehaviour
         else if (InventoryToggle == false)
         {
             InventorySubBar.SetActive(false);
-        } 
+        }
     }
 
     public void InventoryBackgroundControl()

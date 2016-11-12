@@ -71,9 +71,10 @@ public class FoodsInventory : MonoBehaviour
             PlayerCustomization.playercustomization.OnPlayerCustomizationToggle(false);
 
             //Weapons
-            Pistols.pistols.OnPistolsToggle(false);
-            AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);
-            SubmachineGuns.submachineguns.OnSMGToggle(false);
+            Pistols.pistols.OnPistolsToggle(false); //Pistols
+            AssualtRifles.assualtrifles.OnAssaultRifleToggle(false);    //Assault Rifles
+            SubmachineGuns.submachineguns.OnSMGToggle(false);   //Submachine Guns
+            LightMachineGuns.lightmachineguns.OnLMGToggle(false);   //Lightmachine Guns
         }
 
         else if (FoodsInventoryToggle == false)

@@ -16,15 +16,29 @@ public class ItemPickUp : MonoBehaviour
 
     void Awake()
     {
-        ItemText = GameObject.Find("Item UI/Text").GetComponent<Text>();
+        ItemText = GameObject.Find("Item UI/_Text").GetComponent<Text>();
         ItemPanel = GameObject.Find("Item UI");
         itempickup = this.GetComponent<ItemPickUp>();
     }
 
     void OnEnable()
     {
-        PlayerItems[0].Name = "Health Pack";
-        PlayerItems[0].TagName = "Health Pack";
+        //Tier One Med Pack 
+        PlayerItems[0].Name = "Med Pack Tier One";
+        PlayerItems[0].TagName = "Med Pack Tier One";
+
+        //Tier Two Med Pack
+        PlayerItems[1].Name = "Med Pack Tier Two";
+        PlayerItems[1].TagName = "Med Pack Tier Two";
+
+        //Tier Three Med Pack
+        PlayerItems[2].Name = "Med Pack Tier Three";
+        PlayerItems[2].TagName = "Med Pack Tier Three";
+
+        //Tier Four Med Pack
+        PlayerItems[3].Name = "Med Pack Tier Four";
+        PlayerItems[3].TagName = "Med Pack Tier Four";
+
     }
 
     IEnumerator ShowMessage(string message, float delay)
@@ -47,7 +61,7 @@ public class ItemPickUp : MonoBehaviour
             {
                 if (hit.collider.tag == PlayerItems[i].TagName)
                 {
-                    ItemText.text = "Press [F] to Pick Up Item";
+                    ItemText.text = "Press [ F ] to Pick up " + PlayerItems[i].Name;
                     ItemText.enabled = true;
                     i = 0;
                     break;
